@@ -397,7 +397,7 @@ if __name__ == '__main__':
 
 	for item in productData:
 		driver =webdriver.Firefox(options=options)
-		driver.implicitly_wait(10)
+		driver.implicitly_wait(1)
 		driver.get(item["url"])
 		productsPageData=driver.find_elements_by_class_name("LinkProduct")
 		# for x in range(5):
@@ -405,7 +405,7 @@ if __name__ == '__main__':
 			for product in productsPageData:
 				productDtailUrl=product.get_attribute("href")
 				driver1 =webdriver.Firefox(options=options)
-				driver1.implicitly_wait(5)
+				driver1.implicitly_wait(1)
 				driver1.get(productDtailUrl)
 				try:
 					
@@ -517,7 +517,7 @@ if __name__ == '__main__':
 								
 								attBtn=driver1.find_element_by_id("tabTypeLink")
 								driver1.execute_script("arguments[0].click();", attBtn)
-								time.sleep(5)
+								time.sleep(1)
 								prodAttfiles1=driver1.find_elements_by_class_name("ProductParametrContainer")
 								for pp in prodAttfiles1:
 									prodAttfiles=pp.find_elements_by_tag_name("a")
@@ -555,7 +555,7 @@ if __name__ == '__main__':
 											clickbtn=driver.find_elements_by_class_name("pagination")[1].find_elements_by_tag_name("li")[7].find_element_by_tag_name("a")
 											driver.execute_script("arguments[0].click();", clickbtn)
 											# print("dflkdsjfskdjfkl",clickbtn.text)
-											time.sleep(10)
+											time.sleep(1)
 											btn_status=True
 										except:
 											print("click error!")
