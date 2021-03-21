@@ -309,7 +309,7 @@ if __name__ == '__main__':
 								container["url"]=productsUrl
 								container["catName"]=catName+"/"+subCatName
 								productData=productData+[container]
-								print(productsUrl1 + " puted into Url list!")
+								print(productsUrl + " puted into Url list!")
 							drive2.quit()
 							try:
 								drive3.quit()
@@ -533,8 +533,8 @@ if __name__ == '__main__':
 						##end parameteries===
 						driver1.quit()
 
-						mydata = ET.tostring(products,encoding='utf-8').decode("utf-8")
-						myfile = open("prod.xml", "w",encoding='utf-8')
+						mydata = ET.tostring(products,encoding='utf8').decode("utf8")
+						myfile = open("prod.xml", "w",encoding='utf8')
 						myfile.write(mydata)
 
 						# break
